@@ -10,7 +10,7 @@ spring:
     config:
       server:
         git:
-          uri: file:///D:/gdc_system
+          uri: file:///D:/workspace_gdc/gdc_system_config
           skipSslValidation: true
 
 eureka:
