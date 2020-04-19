@@ -1,0 +1,31 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: gdc-service-config
+  profiles:
+    active : dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///D:/gdc_system
+          skipSslValidation: true
+
+eureka:
+  client:
+    enabled : true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    healthcheck:
+      enabled: true
+      
+logging:
+  config: classpath:./logback-spring.xml
+  
+log:
+  path: D:/var/logs/${spring.application.name}
+  level:
+    root: INFO
+    gdc: TRACE
